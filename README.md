@@ -18,4 +18,4 @@ npm run dev
 npm run build
 ```
 
-Public Website Url: [https://linus-website-info.is-on.net](https://linus-website-info.is-on.net)
+Public Website Url: [https://leicraft.de/](https://leicraft.de/)
