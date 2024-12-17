@@ -15,7 +15,7 @@ function scrollToTop() {
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-body" data-bs-theme="dark" style="background-color: #0b0c1b !important;">
         <div class="container justify-content-lg-center">
             <a class="navbar-brand" href="/">
-                <img src="/logo.png" alt="Logo" width="50" height="50">
+                <img src="/assets/img/logo.png" alt="Logo" width="50" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,10 +28,10 @@ function scrollToTop() {
                         <a class="nav-link active text" aria-current="page" @click="scrollToTop()" style="cursor: pointer;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-me">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" to="#leicoin">LeiCoin</a>
+                        <a class="nav-link" href="#projects">Projekte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link external-link" href="https://github.com/LeiCraft/">Github</a>
