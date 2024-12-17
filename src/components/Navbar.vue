@@ -1,7 +1,18 @@
 
+<script setup lang="ts">
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+
+</script>
 
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-body" data-bs-theme="dark" style="background-color: #0b0c1b !important;">
         <div class="container justify-content-lg-center">
             <a class="navbar-brand" href="/">
                 <img src="/logo.png" alt="Logo" width="50" height="50">
@@ -14,13 +25,13 @@
             <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
+                        <a class="nav-link active text" aria-current="page" @click="scrollToTop()" style="cursor: pointer;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" to="/about">About</RouterLink>
+                        <a class="nav-link" href="#about-me">About</a>
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" to="/leicoin">LeiCoin</RouterLink>
+                        <a class="nav-link" to="#leicoin">LeiCoin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link external-link" href="https://github.com/LeiCraft/">Github</a>
