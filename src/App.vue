@@ -20,7 +20,7 @@ import SkillsView from './views/SkillsView.vue';
 
 	<footer class="footer">
 		<div class="container-fluid footer-legal">
-			<p class="text-center legal-text">&copy; 2021 - 2024 LeiCraft_MC. Alle Rechte vorbehalten</p>
+			<p class="text-center legal-text">&copy; 2021 - 2025 LeiCraft_MC. Alle Rechte vorbehalten</p>
 		</div>
 	</footer>
 
