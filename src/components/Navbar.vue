@@ -25,7 +25,7 @@ function scrollToTop() {
             <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text" aria-current="page" @click="scrollToTop()" style="cursor: pointer;">Home</a>
+                        <a class="nav-link active text" aria-current="page" @click="scrollToTop()" href="#" style="cursor: pointer;">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
