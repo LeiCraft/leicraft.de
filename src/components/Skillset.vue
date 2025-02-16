@@ -22,7 +22,7 @@ defineProps({
 
 <template>
 
-    <h4 class="text-center">{{ name }}</h4>
+    <h3 class="h4 text-center">{{ name }}</h3>
 
     <div class="d-flex flex-wrap justify-content-center">
         <div v-for="item in items" :key="item.name" class="m-1">
