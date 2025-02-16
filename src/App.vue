@@ -20,7 +20,11 @@ import SkillsView from './views/SkillsView.vue';
 
 	<footer class="footer">
 		<div class="container-fluid footer-legal">
-			<p class="text-center legal-text">&copy; 2021 - 2025 LeiCraft_MC. Alle Rechte vorbehalten</p>
+			<p class="legal-paragraph">
+				<span class="copyright-text">&copy; 2021 - 2025 LeiCraft_MC. Alle Rechte vorbehalten</span><br>
+				<a class="legal-text" href="https://client.leicraftmc.de/impressum/">Impressum</a> | 
+				<a class="legal-text" href="https://client.leicraftmc.de/datenschutz/">Datenschutz</a>
+			</p>
 		</div>
 	</footer>
 
@@ -34,12 +38,22 @@ import SkillsView from './views/SkillsView.vue';
 }
 .footer-legal {
     background-color: #1a1b2e;
+	text-align: center;
 }
-.legal-text {
-    padding-top: 8px;
+
+.legal-paragraph {
+	padding-top: 8px;
     padding-bottom: 8px;
     margin-bottom: 0;
+}
+
+.copyright-text {
     background-color: #1a1b2e;
+}
+
+.legal-text {
+	text-decoration: none;
+	color: rgb(255, 254, 255, 0.75);
 }
 
 </style>
