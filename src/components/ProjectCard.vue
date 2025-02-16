@@ -18,7 +18,7 @@ defineProps({
     <div class="col-sm-6 mb-6 mb-sm-0">
         <div class="card project-card">
             <div class="card-body">
-                <img :src="img" height="70px" width="70px" class="card-title">
+                <img :src="img" alt="Logo" height="70px" width="70px" class="card-title">
                 <h3 class="card-title">{{ title }}</h3>
                 <p class="card-text top-cards-text">
                     <slot></slot>
