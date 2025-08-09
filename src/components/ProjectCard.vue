@@ -48,7 +48,8 @@ defineProps({
 .top-cards-text {
 	font-size: 17px;
 	color: #9193a8;
-    text-align: start;
+    hyphens: auto; 
+	text-align: justify
 }
 
 </style>

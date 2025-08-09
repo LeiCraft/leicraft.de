@@ -2,6 +2,7 @@
 import ProjectCard from '@/components/ProjectCard.vue';
 import LeiCoinView from './LeiCoinView.vue';
 import HostingView from './HostingView.vue';
+import NetIgniteView from './NetIgniteView.vue';
 
 </script>
 
@@ -14,6 +15,7 @@ import HostingView from './HostingView.vue';
 			<div class="row gx-4 gy-4">
 				<LeiCoinView />
 				<HostingView />
+				<NetIgniteView />
 			</div>
 		</div>
 
