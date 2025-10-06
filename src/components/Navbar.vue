@@ -34,6 +34,9 @@ function scrollToTop() {
                         <a class="nav-link" href="#projects">Projekte</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link external-link" href="https://blog.leicraftmc.de/">Blog</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link external-link" href="https://github.com/LeiCraft/">Github</a>
                     </li>
                 </ul>
