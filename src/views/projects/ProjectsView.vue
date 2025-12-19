@@ -3,6 +3,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import LeiCoinView from './LeiCoinView.vue';
 import HostingView from './HostingView.vue';
 import NetIgniteView from './NetIgniteView.vue';
+import LeiOSView from './LeiOSView.vue';
 
 </script>
 
@@ -16,6 +17,7 @@ import NetIgniteView from './NetIgniteView.vue';
 				<LeiCoinView />
 				<HostingView />
 				<NetIgniteView />
+				<LeiOSView />
 			</div>
 		</div>
 
