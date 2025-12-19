@@ -39,6 +39,9 @@ function scrollToTop() {
                     <li class="nav-item">
                         <a class="nav-link external-link" target="_blank" href="https://github.com/LeiCraft/">Github</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link external-link" target="_blank" href="https://discord.com/invite/3cdazADhtv">Discord</a>
+                    </li>
                 </ul>
             </div> 
         </div>
