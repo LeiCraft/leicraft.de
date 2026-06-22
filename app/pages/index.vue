@@ -70,27 +70,95 @@ const infrastructure: Skill[] = [
     { name: "Terraform", icon: TerraformDarkIcon },
 ];
 
+const baseUrl = "https://www.leicraft.de";
+
+useHead(() => ({
+    link: [{ rel: "canonical", href: baseUrl + "/" }],
+    script: [
+        {
+            type: "application/ld+json",
+            innerHTML: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Linus Fischer",
+                alternateName: "LeiCraft_",
+                url: baseUrl,
+                jobTitle: "Softwareentwickler",
+                sameAs: [
+                    "https://github.com/LeiCraft",
+                    "https://git.leicraftmc.de/LeiCraft/",
+                    "https://twitter.com/leicraft_",
+                    "https://blog.leicraftmc.de/",
+                ],
+                knowsAbout: [
+                    "Softwareentwicklung",
+                    "Server-Infrastruktur",
+                    "Dezentrale Netzwerke",
+                    "Open Source",
+                    "Blockchain",
+                    "Linux",
+                    "Self-Hosting",
+                ],
+            }),
+        },
+    ],
+}));
+
 useSeoMeta({
-    title: "Linus Fischer",
-    description: "Hi, ich bin Linus, ein leidenschaftlicher Softwareentwickler aus Deutschland. Ich liebe mit Blockchain und dezentralen Netzwerken zu arbeiten.",
+    title: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    description: "Linus Fischer (LeiCraft_) — Softwareentwickler aus Deutschland mit Fokus auf skalierbare Server-Software, dezentrale Systeme und Open-Source-Tools.",
+    ogTitle: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    ogDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr und NowIP.",
+    ogUrl: baseUrl,
+    ogType: "website",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    twitterDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr und NowIP.",
 });
 
 </script>
 
 <template>
     <section id="home" class="text-center py-12">
-        <h1 class="text-5xl font-bold mb-2">Hi, ich bin Linus</h1>
-        <h2 class="text-2xl text-gray-400">aka LeiCraft_</h2>
+        <h1 class="text-5xl font-bold mb-2">Linus Fischer</h1>
+        <p class="text-2xl text-gray-400">Softwareentwickler, Open-Source-Enthusiast & Infrastruktur-Nerd</p>
+        <p class="text-lg text-gray-500 mt-2">Hi, ich bin Linus — auch bekannt als LeiCraft_.</p>
     </section>
 
     <section id="about" class="py-8">
         <h2 class="text-center text-3xl font-bold mb-6">Über mich</h2>
-        <p class="text-center mx-auto max-w-[800px] text-lg text-gray-300">
-            Ich bin Softwareentwickler mit einer großen Leidenschaft für Blockchain-Technologie, Server-Side Development und
-            Minecraft Modding. Es begeistert mich, skalierbare und dezentrale Systeme zu entwickeln und
-            Server-Infrastrukturen zu optimieren. Außerdem beteilige ich mich gerne an Open-Source-Projekten, um meine
-            Fähigkeiten weiter auszubauen und die Entwickler-Community zu unterstützen.
-        </p>
+        <div class="mx-auto max-w-[800px] text-lg text-gray-300 space-y-4">
+            <p>
+                Ich bin Linus Fischer, auch bekannt als <span class="font-semibold text-white">LeiCraft_</span> — ein
+                leidenschaftlicher Softwareentwickler und Infrastruktur-Enthusiast aus Deutschland. Schon seit meiner frühesten
+                Zeit mit Computern fasziniert mich, wie Software und gut geplante Infrastruktur zusammenwirken, um
+                verlässliche Systeme zu schaffen.
+            </p>
+            <p>
+                Heute liegt mein Fokus auf skalierbarer Server-Side-Entwicklung, dezentralen Netzwerken und der Optimierung
+                von Server-Infrastrukturen. Mich begeistert die Idee, Systeme zu bauen, die weniger von zentralen
+                Plattformen abhängen, dafür aber stabiler, offener und für jeden nachvollziehbar sind. In der Praxis bedeutet
+                das oft: TypeScript und Node.js auf der Server-Seite, Vue.js für Interfaces, Docker und Linux für das
+                Deployment — kombiniert mit einem faible für Automatisierung und saubere Architektur.
+            </p>
+            <p>
+                Neben dem Programmieren betreibe ich eigene Server, experimentiere mit Self-Hosting-Lösungen und dokumentiere
+                das Gelernte gelegentlich auf meinem Blog. Open Source begleitet mich dabei täglich: Ich arbeite gerne an
+                Projekten, die transparent sind, anderen helfen und aus denen man als Entwickler selbst wieder lernen kann.
+                Wenn ich nicht gerade Code schreibe, beschäftige ich mich wahrscheinlich mit Netzwerk-Setups, Linux-Distributionen
+                oder neuen Ansätzen für resilientere Infrastruktur.
+            </p>
+
+            <div class="pt-2">
+                <NuxtLink
+                    to="/projects"
+                    class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors font-medium"
+                >
+                    <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+                    <span>Meine Projekte entdecken</span>
+                </NuxtLink>
+            </div>
+        </div>
     </section>
 
     <section id="skills" class="py-8">
