@@ -4,6 +4,10 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 
+# 1.5. ACME / WELL-KNOWN BYPASS
+# Do not rewrite or redirect anything under /.well-known/ (e.g. Let's Encrypt)
+RewriteRule ^\.well-known/ - [L]
+
 # 2. THE LOOP PREVENTER
 # If we have already rewritten to index.html, STOP EVERYTHING.
 RewriteRule ^index\.html$ - [L]
