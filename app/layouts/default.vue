@@ -9,7 +9,9 @@ const links = computed<NavigationMenuItem[]>(() => [
     },
     {
         label: "Skills",
-        to: "/#skills"
+        to: "/#skills",
+        exact: true,
+        active: false
     },
     {
         label: "Projekte",
@@ -35,14 +37,15 @@ const mobileLinks = computed<NavigationMenuItem[][]>(() => [
         label: social.label,
         to: social.to,
         target: "_blank",
-        icon: social.icon,
-        trailingIcon: "i-lucide-arrow-up-right"
+        icon: social.icon
     }))
 ]);
 </script>
 
 <template>
+
     <div class="app-layout main-bg-color">
+
         <UHeader class="backdrop-blur-xl">
             <template #title>
                 <NuxtLink to="/" class="flex items-center gap-1.5">
@@ -53,10 +56,14 @@ const mobileLinks = computed<NavigationMenuItem[][]>(() => [
                 </NuxtLink>
             </template>
 
-            <UNavigationMenu :items="[links]" class="hidden md:flex" />
+            <UNavigationMenu :items="[links]" />
+
+            <template #body>
+                <UNavigationMenu :items="mobileLinks" orientation="vertical" class="w-full" />
+            </template>
 
             <template #right>
-                <div class="hidden md:flex items-center gap-2">
+                <div class="hidden lg:flex items-center gap-2">
                     <UButton
                         v-for="social in socialLinks"
                         :key="social.label"
@@ -70,10 +77,6 @@ const mobileLinks = computed<NavigationMenuItem[][]>(() => [
                         class="hover:scale-110 transition-transform duration-200"
                     />
                 </div>
-            </template>
-
-            <template #body>
-                <UNavigationMenu :items="mobileLinks" orientation="vertical" class="w-full" />
             </template>
         </UHeader>
 
@@ -99,7 +102,9 @@ const mobileLinks = computed<NavigationMenuItem[][]>(() => [
                 </p>
             </div>
         </UFooter>
+
     </div>
+
 </template>
 
 <style scoped>
