@@ -124,8 +124,13 @@ export const projects: Project[] = [
         logo: "/static/logo/schwere-zeit-icon.png",
         tags: ["Nuxt", "Vue.js", "TypeScript", "Tailwind CSS"],
         status: "Live",
-        sourceUrl: "https://git.leicraftmc.de/LeiCraft/schwere-zeit.de",
+        sourceUrl: "https://git.leicraftmc.de/schwere-zeit-de/website",
         websiteUrl: "https://www.schwere-zeit.de",
+        additionalLinks: [
+            { label: "API-Server", url: "https://git.leicraftmc.de/schwere-zeit-de/API-Server" },
+            { label: "Mitgliederportal", url: "https://git.leicraftmc.de/schwere-zeit-de/mitgliederportal" },
+            { label: "Legal", url: "https://git.leicraftmc.de/schwere-zeit-de/legal" },
+        ],
     },
 ];
 
