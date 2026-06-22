@@ -1,0 +1,56 @@
+image: oven/bun
+
+stages:
+  - test
+  - build_and_deploy
+
+default:
+  interruptible: true
+  cache:
+    key:
+      files:
+        - bun.lock
+    paths:
+      - .bun/install/cache/
+      - node_modules/
+  before_script:
+    - bun install --frozen-lockfile
+
+variables:
+  BUN_INSTALL_CACHE_DIR: .bun/install/cache
+  NUXT_TELEMETRY_DISABLED: '1'
+
+
+test:typecheck:
+  stage: test
+  script:
+    - bun run typecheck
+
+test:unit:
+  stage: test
+  script:
+    - bun test
+
+
+build_and_deploy_pages:
+
+  stage: build_and_deploy
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: always    # You can make it manual or automatic
+      allow_failure: false
+    - when: never
+
+  before_script:
+
+    - apt update && apt upgrade -y
+    - apt install -y rsync sshpass openssh-client
+    - bun install
+
+  script:
+    - bun generate
+
+    - echo "Deploying to production & $CI_PAGES_URL"
+
+    - .gitlab/ci/deploy.sh

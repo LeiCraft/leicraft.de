@@ -1,35 +1,23 @@
 {
-  "name": "my-website",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
-  },
-  "dependencies": {
-    "bootstrap": "5.3.3",
-    "bun": "^1.2.19",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
-  },
-  "devDependencies": {
-    "@tsconfig/node22": "^22.0.2",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.17.1",
-    "@vitejs/plugin-vue": "^5.2.4",
-    "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
-    "jsdom": "^25.0.1",
-    "npm-run-all2": "^7.0.2",
-    "typescript": "^5.9.2",
-    "vite": "^6.3.5",
-    "vite-plugin-vue-devtools": "^7.7.7",
-    "vitest": "^2.1.9",
-    "vue-tsc": "^2.2.12"
-  }
+    "name": "linus-fischer-personal-website",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "typecheck": "nuxt typecheck && tsc -p ./tsconfig/tsconfig.typecheck.json && echo 'Typecheck passed!'",
+        "test": "bun test",
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview"
+    },
+    "dependencies": {
+        "@nuxt/ui": "^4.9.0",
+        "@tailwindcss/typography": "^0.5.20",
+        "nuxt": "^4.4.8"
+    },
+    "devDependencies": {
+        "@types/bun": "^1.3.14",
+        "vue-tsc": "^3.3.5"
+    }
 }
