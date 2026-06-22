@@ -11,10 +11,9 @@ const { title, img, to, tags = [], status } = defineProps<Props>();
 </script>
 
 <template>
-    <component
-        :is="to ? 'NuxtLink' : 'div'"
+    <NuxtLink
         :to="to"
-        class="group block bg-[#1a1b2e] rounded-lg text-center h-full flex flex-col p-6 transition-transform duration-200 hover:scale-[1.02] hover:bg-[#22233a]"
+        class="group bg-[#1a1b2e] rounded-lg text-center h-full flex flex-col p-6 transition-transform duration-200 hover:scale-[1.02] hover:bg-[#22233a]"
     >
         <img :src="img" :alt="`${title} Logo`" height="70" width="70" class="mx-auto mb-3" />
 
@@ -26,7 +25,7 @@ const { title, img, to, tags = [], status } = defineProps<Props>();
 
         <h3 class="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">{{ title }}</h3>
 
-        <p class="text-[17px] text-[#9193a8] hyphens-auto text-justify mt-2 flex-grow">
+        <p class="text-[17px] text-[#9193a8] hyphens-auto text-justify mt-2 grow">
             <slot></slot>
         </p>
 
@@ -39,5 +38,5 @@ const { title, img, to, tags = [], status } = defineProps<Props>();
                 {{ tag }}
             </span>
         </div>
-    </component>
+    </NuxtLink>
 </template>

@@ -112,7 +112,7 @@ export const projects: Project[] = [
         logo: "/static/logo/logo.png",
         tags: ["Hosting", "Infrastruktur", "Performance"],
         status: "Aktiv",
-        sourceUrl: "https://leicraftmc.de",
+        sourceUrl: "https://hosting.leicraftmc.de",
     },
 ];
 
