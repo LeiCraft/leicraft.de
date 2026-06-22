@@ -27,9 +27,9 @@ useHead(() => ({
 
 useSeoMeta({
     title: "Projekte | Linus Fischer",
-    description: "Meine Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP und LeiCraft_MC Hosting.",
+    description: "Meine Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP, LeiCraft_MC Hosting und Schwere-Zeit.de.",
     ogTitle: "Projekte | Linus Fischer",
-    ogDescription: "Übersicht über meine Open-Source-Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP und LeiCraft_MC Hosting.",
+    ogDescription: "Übersicht über meine Open-Source-Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP, LeiCraft_MC Hosting und Schwere-Zeit.de.",
     ogUrl: pageUrl,
     ogType: "website",
     twitterCard: "summary",

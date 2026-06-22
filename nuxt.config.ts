@@ -24,6 +24,7 @@ export default defineNuxtConfig({
                 '/projects/delivr',
                 '/projects/nowip',
                 '/projects/leicraft-mc-hosting',
+                '/projects/schwere-zeit',
             ],
         },
     },

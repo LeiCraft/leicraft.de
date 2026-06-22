@@ -114,6 +114,19 @@ export const projects: Project[] = [
         status: "Aktiv",
         sourceUrl: "https://hosting.leicraftmc.de",
     },
+    {
+        id: "schwere-zeit",
+        title: "Schwere-Zeit.de",
+        shortDescription:
+            "Informationsseite rund um das Thema Schwerbehinderung mit Ratgebern, Rechner-Tools und nützlichen Ressourcen.",
+        description:
+            "Schwere-Zeit.de ist eine umfassende Informationsseite, die Betroffenen und Interessierten rund um das Thema Schwerbehinderung hilfreiche Inhalte bietet. Die Seite umfasst ausführliche Ratgeber, praktische Rechner-Tools (z. B. zum Steuerfreibetrag oder zum Zusatzurlaub) sowie eine strukturierte Sammlung nützlicher Ressourcen und Links. Ziel ist es, Orientierung in einer komplexen Thematik zu geben und den Zugang zu relevanten Informationen so einfach wie möglich zu gestalten.",
+        logo: "/static/logo/schwere-zeit-icon.png",
+        tags: ["Nuxt", "Vue.js", "TypeScript", "Tailwind CSS"],
+        status: "Live",
+        sourceUrl: "https://git.leicraftmc.de/LeiCraft/schwere-zeit.de",
+        websiteUrl: "https://www.schwere-zeit.de",
+    },
 ];
 
 export function getProjectById(id: string): Project | undefined {

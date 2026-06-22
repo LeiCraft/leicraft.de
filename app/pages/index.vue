@@ -108,7 +108,7 @@ useSeoMeta({
     title: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
     description: "Linus Fischer (LeiCraft_) — Softwareentwickler aus Deutschland mit Fokus auf skalierbare Server-Software, dezentrale Systeme und Open-Source-Tools.",
     ogTitle: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
-    ogDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr und NowIP.",
+    ogDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr, NowIP und Schwere-Zeit.de.",
     ogUrl: baseUrl,
     ogType: "website",
     twitterCard: "summary_large_image",
