@@ -118,9 +118,9 @@ export const projects: Project[] = [
         id: "schwere-zeit",
         title: "Schwere-Zeit.de",
         shortDescription:
-            "Informationsseite rund um das Thema Schwerbehinderung mit Ratgebern, Rechner-Tools und nützlichen Ressourcen.",
+            "Emotionale Unterstützung und ein offenes Ohr für Menschen in schweren Zeiten.",
         description:
-            "Schwere-Zeit.de ist eine umfassende Informationsseite, die Betroffenen und Interessierten rund um das Thema Schwerbehinderung hilfreiche Inhalte bietet. Die Seite umfasst ausführliche Ratgeber, praktische Rechner-Tools (z. B. zum Steuerfreibetrag oder zum Zusatzurlaub) sowie eine strukturierte Sammlung nützlicher Ressourcen und Links. Ziel ist es, Orientierung in einer komplexen Thematik zu geben und den Zugang zu relevanten Informationen so einfach wie möglich zu gestalten.",
+            "Schwere-Zeit.de ist eine Anlaufstelle für Menschen in emotionaler Krise oder schweren Zeiten. Dahinter steht ein Team, das aus eigenen Erfahrungen mit mentalen Herausforderungen heraus hilft und Betroffene ernst nimmt. Die Seite bietet eine niedrigschwellige Möglichkeit, Kontakt aufzunehmen ('Sprich mit uns'), sowie eine Übersicht weiterer Anlaufstellen. Wichtig ist: Schwere-Zeit ersetzt keine Ärzte, Therapeuten oder psychologische Behandlungen, sondern ist ein erstes, verständnisvolles Zuhör-Angebot und vermittelt bei Bedarf an professionelle Hilfe weiter.",
         logo: "/static/logo/schwere-zeit-icon.png",
         tags: ["Nuxt", "Vue.js", "TypeScript", "Tailwind CSS"],
         status: "Live",
