@@ -2,18 +2,14 @@
 import type { NavigationMenuItem } from "@nuxt/ui";
 import LCMCIcon from "~/components/img/LCMCIcon.vue";
 
-const links = [[
+const links = computed<NavigationMenuItem[]>(() => [
     {
-        label: "Home",
+        label: "About",
         to: "/"
     },
     {
-        label: "About",
-        to: "/#about"
-    },
-    {
         label: "Skills",
-        to: "/skills"
+        to: "/#skills"
     },
     {
         label: "Projekte",
@@ -23,40 +19,62 @@ const links = [[
         label: "Blog",
         to: "https://blog.leicraftmc.de/",
         target: "_blank"
-    },
-    {
-        label: "Github",
-        to: "https://github.com/LeiCraft/",
-        target: "_blank"
-    },
-    {
-        label: "Discord",
-        to: "https://discord.com/invite/3cdazADhtv",
-        target: "_blank"
-    },
-]] satisfies NavigationMenuItem[][];
+    }
+]);
+
+const socialLinks = [
+    { icon: "i-lucide-github", to: "https://github.com/LeiCraft/", label: "GitHub" },
+    { icon: "i-lucide-gitlab", to: "https://git.leicraftmc.de/LeiCraft/", label: "GitLab" },
+    { icon: "i-lucide-message-circle", to: "https://discord.com/invite/3cdazADhtv", label: "Discord" },
+    { icon: "i-lucide-twitter", to: "https://twitter.com/leicraft_", label: "Twitter" }
+];
+
+const mobileLinks = computed<NavigationMenuItem[][]>(() => [
+    links.value,
+    socialLinks.map(social => ({
+        label: social.label,
+        to: social.to,
+        target: "_blank",
+        icon: social.icon,
+        trailingIcon: "i-lucide-arrow-up-right"
+    }))
+]);
 </script>
 
 <template>
-
     <div class="app-layout main-bg-color">
-
-        <UHeader>
-            <template #left>
+        <UHeader class="backdrop-blur-xl">
+            <template #title>
                 <NuxtLink to="/" class="flex items-center gap-1.5">
                     <LCMCIcon class="w-10 h-10" />
                     <span class="text-3xl font-extrabold">
-                        LeiCraft_MC
+                        Linus Fischer
                     </span>
                 </NuxtLink>
             </template>
 
-            <UNavigationMenu :items="links" />
+            <UNavigationMenu :items="[links]" class="hidden md:flex" />
 
-            <template #body>
-                <UNavigationMenu :items="links" orientation="vertical" class="w-full" />
+            <template #right>
+                <div class="hidden md:flex items-center gap-2">
+                    <UButton
+                        v-for="social in socialLinks"
+                        :key="social.label"
+                        :to="social.to"
+                        target="_blank"
+                        :icon="social.icon"
+                        color="neutral"
+                        variant="ghost"
+                        size="lg"
+                        :aria-label="social.label"
+                        class="hover:scale-110 transition-transform duration-200"
+                    />
+                </div>
             </template>
 
+            <template #body>
+                <UNavigationMenu :items="mobileLinks" orientation="vertical" class="w-full" />
+            </template>
         </UHeader>
 
         <UMain class="py-8 main-content">
@@ -71,19 +89,17 @@ const links = [[
                     <span>&copy; 2021 - {{ new Date().getFullYear() }} LeiCraft_MC. Alle Rechte vorbehalten</span>
                 </p>
                 <p>
-                    <NuxtLink to="https://client.leicraftmc.de/impressum/" target="_blank" class="hover:text-slate-300 transition-colors">
+                    <NuxtLink to="https://legal.leicraftmc.de/impressum/" target="_blank" class="hover:text-slate-300 transition-colors">
                         Impressum
                     </NuxtLink>
                     <span class="mx-2">|</span>
-                    <NuxtLink to="https://client.leicraftmc.de/datenschutz/" target="_blank" class="hover:text-slate-300 transition-colors">
+                    <NuxtLink to="https://legal.leicraftmc.de/datenschutz/" target="_blank" class="hover:text-slate-300 transition-colors">
                         Datenschutz
                     </NuxtLink>
                 </p>
             </div>
         </UFooter>
-
     </div>
-
 </template>
 
 <style scoped>
@@ -96,5 +112,4 @@ const links = [[
 .main-content {
     flex: 1;
 }
-
 </style>
