@@ -26,4 +26,4 @@ bun run build
 bun run generate
 ```
 
-Public Website Url: [https://leicraft.de/](https://leicraft.de/)
+Public Website Url: [https://wwww.leicraft.de/](https://www.leicraft.de/)
