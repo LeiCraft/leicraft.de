@@ -25,6 +25,7 @@ export default defineNuxtConfig({
                 '/projects/nowip',
                 '/projects/leicraft-mc-hosting',
                 '/projects/schwere-zeit',
+                '/projects/mindcode'
             ],
         },
     },

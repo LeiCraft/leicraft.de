@@ -132,6 +132,21 @@ export const projects: Project[] = [
             { label: "Legal", url: "https://git.leicraftmc.de/schwere-zeit-de/legal" },
         ],
     },
+    {
+        id: "mindcode",
+        title: "MindCode",
+        shortDescription:
+            "Webbasiertes Tool zur Nutzung von Claude Code im Browser, mit Fokus auf Benutzerfreundlichkeit und Effizienz.",
+        description:
+            "MindCode ist ein webbasiertes Tool, das die Nutzung von Claude Code im Browser ermöglicht. Der Fokus liegt auf Benutzerfreundlichkeit und Effizienz, um Entwicklern eine reibungslose Erfahrung zu bieten.",
+        logo: "/static/logo/mindcode-icon.png",
+        tags: ["AI", "Claude Code", "TypeScript", "Nuxt", "Vue.js"],
+        status: "In Entwicklung",
+        sourceUrl: "https://git.leicraftmc.de/LeiCraftMC/MindCode",
+        additionalLinks: [
+            { label: "Github Mirror", url: "https://github.com/LeiCraftMC/MindCode" },
+        ],
+    }
 ];
 
 export function getProjectById(id: string): Project | undefined {
