@@ -18,34 +18,72 @@ useHead(() => ({
             type: "application/ld+json",
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                name: project.value?.title,
-                description: project.value?.shortDescription,
-                url: pageUrl.value,
-                applicationCategory: "DeveloperApplication",
-                operatingSystem: "Linux, Server, Web",
-                author: {
-                    "@type": "Person",
-                    name: "Linus Fischer",
-                    url: baseUrl,
-                },
-                codeRepository: project.value?.sourceUrl,
-                ...(project.value?.websiteUrl ? { sameAs: project.value.websiteUrl } : {}),
+                "@graph": [
+                    {
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            {
+                                "@type": "ListItem",
+                                position: 1,
+                                name: "Linus Fischer",
+                                item: baseUrl,
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 2,
+                                name: "Projekte",
+                                item: `${baseUrl}/projects`,
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 3,
+                                name: project.value?.title,
+                                item: pageUrl.value,
+                            },
+                        ],
+                    },
+                    {
+                        "@type": "SoftwareApplication",
+                        name: project.value?.title,
+                        description: project.value?.shortDescription,
+                        url: pageUrl.value,
+                        image: project.value?.logo ? baseUrl + project.value.logo : undefined,
+                        applicationCategory: "DeveloperApplication",
+                        operatingSystem: "Linux, Server, Web",
+                        author: {
+                            "@type": "Person",
+                            name: "Linus Fischer",
+                            url: baseUrl,
+                        },
+                        codeRepository: project.value?.sourceUrl,
+                        ...(project.value?.websiteUrl ? { sameAs: project.value.websiteUrl } : {}),
+                    },
+                ],
             }),
         },
     ],
 }));
 
+const projectTitle = `${project.value.title} — Projekte | Linus Fischer`;
+const projectImage = project.value.logo ? baseUrl + project.value.logo : baseUrl + "/assets/img/logo.png";
+
 useSeoMeta({
-    title: `${project.value.title} — Projekt von Linus Fischer`,
+    title: projectTitle,
     description: project.value.shortDescription,
-    ogTitle: `${project.value.title} — Projekt von Linus Fischer`,
+    ogTitle: projectTitle,
     ogDescription: project.value.shortDescription,
     ogUrl: pageUrl.value,
-    ogType: "website",
-    twitterCard: "summary",
-    twitterTitle: `${project.value.title} — Projekt von Linus Fischer`,
+    ogType: "article",
+    ogLocale: "de_DE",
+    ogImage: projectImage,
+    ogImageAlt: `${project.value.title} Logo — Projekte | Linus Fischer`,
+    ogImageWidth: project.value.logo ? 100 : 1200,
+    ogImageHeight: project.value.logo ? 100 : 630,
+    twitterCard: project.value.logo ? "summary" : "summary_large_image",
+    twitterTitle: projectTitle,
     twitterDescription: project.value.shortDescription,
+    twitterImage: projectImage,
+    twitterImageAlt: `${project.value.title} Logo — Projekte | Linus Fischer`,
 });
 
 const allLinks = computed(() => {

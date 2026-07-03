@@ -99,10 +99,12 @@ useHead(() => ({
                 },
                 publisher: {
                     "@type": "Person",
+                    "@id": baseUrl + "/#person",
                     "name": "Linus Fischer"
                 },
                 author: {
                     "@type": "Person",
+                    "@id": baseUrl + "/#person",
                     name: "Linus Fischer",
                     url: baseUrl,
                 },
@@ -113,29 +115,63 @@ useHead(() => ({
                     "https://blog.leicraftmc.de/",
                 ],
                 knowsAbout: [
-                    "Softwareentwicklung",
-                    "Server-Infrastruktur",
-                    "Dezentrale Netzwerke",
-                    "Open Source",
-                    "Blockchain",
+                    "TypeScript",
+                    "JavaScript",
+                    "Node.js",
+                    "Vue.js",
+                    "Nuxt",
+                    "PHP",
+                    "Laravel",
+                    "Java",
+                    "Python",
+                    "C#",
                     "Linux",
+                    "Docker",
+                    "Cloudflare",
+                    "Terraform",
+                    "Debian",
+                    "MySQL",
+                    "Git",
+                    "GitHub",
+                    "Server-Infrastruktur",
                     "Self-Hosting",
+                    "Dezentrale Netzwerke",
+                    "Blockchain",
+                    "Open Source",
+                    "Softwareentwicklung",
                 ],
+                worksFor: {
+                    "@type": "Organization",
+                    name: "LeiCraft_MC",
+                    url: baseUrl,
+                },
+                image: baseUrl + "/assets/img/logo.png",
             }),
         },
     ],
 }));
 
+const pageTitle = "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland";
+const pageDescription = "Portfolio von Linus Fischer (LeiCraft_): Softwareentwickler & Open-Source-Enthusiast aus Deutschland mit Fokus auf skalierbare Server-Software, dezentrale Systeme und Open-Source-Projekte.";
+const ogImageUrl = baseUrl + "/assets/img/logo.png";
+
 useSeoMeta({
-    title: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
-    description: "Linus Fischer (LeiCraft_) — Softwareentwickler aus Deutschland mit Fokus auf skalierbare Server-Software, dezentrale Systeme und Open-Source-Tools.",
-    ogTitle: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
-    ogDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr, NowIP und Schwere-Zeit.de.",
+    title: pageTitle,
+    description: pageDescription,
+    ogTitle: pageTitle,
+    ogDescription: pageDescription,
     ogUrl: baseUrl,
     ogType: "website",
+    ogLocale: "de_DE",
+    ogImage: ogImageUrl,
+    ogImageAlt: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
     twitterCard: "summary_large_image",
-    twitterTitle: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
-    twitterDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr und NowIP.",
+    twitterTitle: pageTitle,
+    twitterDescription: pageDescription,
+    twitterImage: ogImageUrl,
+    twitterImageAlt: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
 });
 
 </script>
@@ -150,11 +186,6 @@ useSeoMeta({
         </p>
         <p class="text-lg text-gray-500 mt-2">
             Hi, ich bin Linus Fischer — auch bekannt als LeiCraft_.
-        </p>
-
-        <p class="sr-only">
-            Linus Fischer ist ein Softwareentwickler aus Deutschland mit Fokus auf skalierbare Systeme,
-            Server-Infrastruktur und Open-Source-Projekte.
         </p>
 
     </section>

@@ -12,29 +12,61 @@ useHead(() => ({
             type: "application/ld+json",
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "ItemList",
-                itemListElement: projects.map((project, index) => ({
-                    "@type": "ListItem",
-                    position: index + 1,
-                    url: `${baseUrl}/projects/${project.id}`,
-                    name: project.title,
-                    description: project.shortDescription,
-                })),
+                "@graph": [
+                    {
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            {
+                                "@type": "ListItem",
+                                position: 1,
+                                name: "Linus Fischer",
+                                item: baseUrl,
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 2,
+                                name: "Projekte",
+                                item: pageUrl,
+                            },
+                        ],
+                    },
+                    {
+                        "@type": "ItemList",
+                        itemListElement: projects.map((project, index) => ({
+                            "@type": "ListItem",
+                            position: index + 1,
+                            url: `${baseUrl}/projects/${project.id}`,
+                            name: project.title,
+                            description: project.shortDescription,
+                        })),
+                    },
+                ],
             }),
         },
     ],
 }));
 
+const pageTitle = "Projekte | Linus Fischer";
+const pageDescription = "Übersicht über alle Projekte von Linus Fischer (LeiCraft_): ADVENA, NetIgnite, LeiOS, Delivr, NowIP, LeiCraft_MC Hosting, Schwere-Zeit.de und MindCode.";
+const ogImageUrl = baseUrl + "/assets/img/logo.png";
+
 useSeoMeta({
-    title: "Projekte | Linus Fischer",
-    description: "Meine Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP, LeiCraft_MC Hosting und Schwere-Zeit.de.",
-    ogTitle: "Projekte | Linus Fischer",
-    ogDescription: "Übersicht über meine Open-Source-Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP, LeiCraft_MC Hosting und Schwere-Zeit.de.",
+    title: pageTitle,
+    description: pageDescription,
+    ogTitle: pageTitle,
+    ogDescription: pageDescription,
     ogUrl: pageUrl,
     ogType: "website",
-    twitterCard: "summary",
-    twitterTitle: "Projekte | Linus Fischer",
-    twitterDescription: "Übersicht über meine Open-Source-Projekte: ADVENA, NetIgnite, LeiOS, Delivr, NowIP und LeiCraft_MC Hosting.",
+    ogLocale: "de_DE",
+    ogImage: ogImageUrl,
+    ogImageAlt: "Projekte von Linus Fischer (LeiCraft_)",
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    twitterCard: "summary_large_image",
+    twitterTitle: pageTitle,
+    twitterDescription: pageDescription,
+    twitterImage: ogImageUrl,
+    twitterImageAlt: "Projekte von Linus Fischer (LeiCraft_)",
 });
 </script>
 
