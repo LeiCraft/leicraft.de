@@ -73,17 +73,39 @@ const infrastructure: Skill[] = [
 const baseUrl = "https://www.leicraft.de";
 
 useHead(() => ({
-    link: [{ rel: "canonical", href: baseUrl + "/" }],
+    link: [
+        { rel: "canonical", href: baseUrl + "/" },
+        { rel: "me", href: "https://github.com/LeiCraft" },
+        { rel: "me", href: "https://git.leicraftmc.de/LeiCraft/" },
+        { rel: "me", href: "https://twitter.com/leicraft_" },
+        { rel: "me", href: "https://blog.leicraftmc.de/" },
+    ],
     script: [
         {
             type: "application/ld+json",
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Person",
+                '@id': baseUrl + "/#person",
                 name: "Linus Fischer",
                 alternateName: "LeiCraft_",
                 url: baseUrl,
+                mainEntityOfPage: baseUrl,
                 jobTitle: "Softwareentwickler",
+                nationality: "German",
+                address: {
+                    "@type": "Place",
+                    addressCountry: "Germany"
+                },
+                publisher: {
+                    "@type": "Person",
+                    "name": "Linus Fischer"
+                },
+                author: {
+                    "@type": "Person",
+                    name: "Linus Fischer",
+                    url: baseUrl,
+                },
                 sameAs: [
                     "https://github.com/LeiCraft",
                     "https://git.leicraftmc.de/LeiCraft/",
@@ -105,14 +127,14 @@ useHead(() => ({
 }));
 
 useSeoMeta({
-    title: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    title: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
     description: "Linus Fischer (LeiCraft_) — Softwareentwickler aus Deutschland mit Fokus auf skalierbare Server-Software, dezentrale Systeme und Open-Source-Tools.",
-    ogTitle: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    ogTitle: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
     ogDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr, NowIP und Schwere-Zeit.de.",
     ogUrl: baseUrl,
     ogType: "website",
     twitterCard: "summary_large_image",
-    twitterTitle: "Linus Fischer — Softwareentwickler & Open-Source-Enthusiast",
+    twitterTitle: "Linus Fischer (LeiCraft_) — Softwareentwickler & Open-Source-Enthusiast aus Deutschland",
     twitterDescription: "Portfolio von Linus Fischer (LeiCraft_): Projekte wie ADVENA, NetIgnite, LeiOS, Delivr und NowIP.",
 });
 
@@ -120,9 +142,21 @@ useSeoMeta({
 
 <template>
     <section id="home" class="text-center py-12">
+
         <h1 class="text-5xl font-bold mb-2">Linus Fischer</h1>
-        <p class="text-2xl text-gray-400">Softwareentwickler, Open-Source-Enthusiast & Infrastruktur-Nerd</p>
-        <p class="text-lg text-gray-500 mt-2">Hi, ich bin Linus — auch bekannt als LeiCraft_.</p>
+
+        <p class="text-2xl text-gray-400">
+            Full Stack Softwareentwickler & Open-Source-Enthusiast
+        </p>
+        <p class="text-lg text-gray-500 mt-2">
+            Hi, ich bin Linus Fischer — auch bekannt als LeiCraft_.
+        </p>
+
+        <p class="sr-only">
+            Linus Fischer ist ein Softwareentwickler aus Deutschland mit Fokus auf skalierbare Systeme,
+            Server-Infrastruktur und Open-Source-Projekte.
+        </p>
+
     </section>
 
     <section id="about" class="py-8">
