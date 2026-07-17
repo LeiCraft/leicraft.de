@@ -18,6 +18,14 @@ const links = computed<NavigationMenuItem[]>(() => [
         to: "/projects"
     },
     {
+        label: "Projekte",
+        to: "/projects"
+    },
+    {
+        label: "Kontakt",
+        to: "/contact"
+    },
+    {
         label: "Blog",
         to: "https://blog.leicraftmc.de/",
         target: "_blank"
