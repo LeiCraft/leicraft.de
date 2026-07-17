@@ -18,10 +18,6 @@ const links = computed<NavigationMenuItem[]>(() => [
         to: "/projects"
     },
     {
-        label: "Projekte",
-        to: "/projects"
-    },
-    {
         label: "Kontakt",
         to: "/contact"
     },
