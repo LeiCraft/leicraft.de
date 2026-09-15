@@ -81,6 +81,7 @@ export const projects: Project[] = [
         tags: ["WebMail", "Nuxt", "Vue.js", "TypeScript", "AGPL-3.0"],
         status: "In Entwicklung",
         sourceUrl: "https://github.com/Delivr-Project",
+        websiteUrl: "https://www.delivr.email",
         additionalLinks: [
             { label: "Frontend (Web)", url: "https://github.com/Delivr-Project/Delivr-Web" },
             { label: "Backend (API)", url: "https://github.com/Delivr-Project/Delivr-API" },
